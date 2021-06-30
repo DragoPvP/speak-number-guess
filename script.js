@@ -33,7 +33,7 @@ function checkNumber(msg) {
 
     // Check if valid number
     if (Number.isNaN(num)) {
-        msgEl.innerHTML = '<div>That is not a valid number!</div>'
+        msgEl.innerHTML += '<div>That is not a valid number!</div>'
         return;
     }
 
@@ -67,3 +67,9 @@ recognition.addEventListener('result', onSpeak);;
 
 // End SR service
 recognition.addEventListener('end', () => { recognition.start() });
+
+document.body.addEventListener('click', e => { 
+    if (e.target.id === 'play-again') {
+        window.location.reload();
+    }
+});
